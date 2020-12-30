@@ -1,0 +1,111 @@
+<div class="full-size sub-view">
+    <div class="horizontal-center">
+        <div>
+
+            <div style="">
+                <!--            coordinators container-->
+
+                <pre class="text-center myPre">set your coordinators</pre>
+
+                <div class="">
+                    <div class="horizontal-center bg-light"
+                         style="width: 900px; padding-left :50px; padding-right: 50px; padding-bottom: 5px;"
+                         ng-repeat="c in channel.getCurrencies()"
+                         ng-init="scopeCurrencyCount = findCurrencyIndex(c)">
+
+
+                        <pre class="text-dark font-weight-bold"
+                             style="margin-left: -20px;">For <span class="text-danger">{{c}}</span></pre>
+
+                        <div class="horizontal-center"
+                             style="width: 800px; margin-bottom: 0px;"
+                             ng-repeat="co in channel.getCoordinators()[scopeCurrencyCount]">
+                            <!--                    coordinator-->
+
+
+                            <div class="full-width bg-dark center-content" style="height: 80px;">
+                                <form class="form-inline">
+                                    <div class="form-group">
+
+
+                                        <label style="">name</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{co.boxNameId}}"
+                                               style="margin-left: 10px" type="text"
+                                               ng-model="co.name">
+
+
+                                        <label style="margin-left: 30px">type</label>
+                                        <select class="form-control"
+                                                ng-attr-id="{{co.boxTypeId}}"
+                                                style="width: 175px; margin-left: 10px"
+                                                ng-model="co.type"
+                                                ng-options="ct for ct in coordinatorTypes">
+                                        </select>
+
+
+                                        <label><input class="radio"
+                                                      ng-attr-name="{{co.name}}"
+                                                      style="margin-left: 30px"
+                                                      type="radio"
+                                                      value="public">public</label>
+                                        <label><input class="radio"
+                                                      ng-attr-name="{{co.name}}"
+                                                      style="margin-left: 10px"
+                                                      type="radio"
+                                                      value="private">private</label>
+                                        <label><input class="radio"
+                                                      ng-attr-name="{{co.name}}"
+                                                      style="margin-left: 10px"
+                                                      type="radio"
+                                                      value=other]">other</label>
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                        <div style="margin-top: 5px;" class="full-width">
+                            <button type="button" class="btn btn-sm btn-dark"
+                                    ng-click="addCoordinator1box(scopeCurrencyCount)">+
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div style="margin-left: 1132px; margin-top: 25px;">
+                <a ui-sref="getstarted20">
+                    <button type="button" class="btn btn-dark border-light" ng-click="next()">next</button>
+                </a>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<div style="position:absolute; right: 0px; top: 0">
+    <p>page19</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

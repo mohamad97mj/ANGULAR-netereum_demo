@@ -1,0 +1,146 @@
+<div class="full-size sub-view">
+    <div class="horizontal-center">
+        <div>
+
+            <div style="">
+                <!--            coordinators container-->
+
+                <pre class="text-center myPre">set your coordinators</pre>
+
+                <div class="border horizontal-center bg-light"
+                     style="width: 900px; padding-left :50px; padding-right: 50px; padding-bottom: 5px;">
+                    <pre class="text-dark font-weight-bold"
+                         style="margin-left: -20px;">For <span class="text-danger">{{currencies[0]}}</span></pre>
+
+                    <div class="center-content border horizontal-center bg-dark" ng-repeat="c1 in coordinators1"
+                         style="height: 80px; width: 800px; margin-bottom: 50px;">
+                        <!--                    coordinator-->
+                        <form class="form-inline">
+                            <div class="form-group" ng-init="count1 = baseNumber1">
+
+
+                                <label style="">name</label>
+                                <input class="form-control" ng-attr-id="{{coordinatorNameIds1[count1]}}"
+                                       style="margin-left: 10px" type="text"
+                                       ng-model="coordinatorNameVars1[count1]">
+
+
+                                <label style="margin-left: 30px">type</label>
+                                <select class="form-control" ng-attr-id="{{coordinatorTypeIds1[count1]}}"
+                                        style="width: 175px; margin-left: 10px"
+                                        ng-model="coordinatorTypeVars1[count1]"
+                                        ng-options="c for c in coordinatorTypes">
+                                </select>
+
+
+                                <label><input class="radio" ng-attr-name="{{coordinatorOwnershipNames1[count1]}}"
+                                              style="margin-left: 30px"
+                                              type="radio" ng-attr-id="{{coordinatorOwnershipId1s1[count1]}}"
+                                              value="public">public</label>
+                                <label><input class="radio" ng-attr-name="{{coordinatorOwnershipNames1[count1]}}"
+                                              style="margin-left: 10px"
+                                              type="radio" ng-attr-id="{{coordinatorOwnershipId2s1[count1]}}"
+                                              value="private">private</label>
+                                <label><input class="radio" ng-attr-name="{{coordinatorOwnershipNames1[count1]}}"
+                                              style="margin-left: 10px"
+                                              type="radio" ng-attr-id="{{coordinatorOwnershipId3s1[count1]}}"
+                                              value=other]">other</label>
+
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="horizontal-center" id="coordinatorContainer-1">
+
+
+                    </div>
+
+<!--                    <div style="margin-top: -45px; margin-bottom: 50px;" class="">-->
+<!--                        <button type="button" class="btn btn-sm btn-dark" ng-click="addCoordinator1box()">+</button>-->
+<!--                    </div>-->
+
+                    <pre class="text-dark font-weight-bold"
+                         style="margin-left: -20px;">For <span class="text-success">{{currencies[1]}}</span></pre>
+                    <div class="center-content border horizontal-center bg-dark" ng-repeat="c2 in coordinators2"
+                         style="height: 80px; width: 800px; margin-bottom: 50px;">
+                        <!--                    coordinator-->
+                        <form class="form-inline">
+                            <div class="form-group" ng-init="count2 = baseNumber2">
+
+
+                                <label style="">name</label>
+                                <input class="form-control" ng-attr-id="{{coordinatorNameIds2[count2]}}"
+                                       style="margin-left: 10px" type="text"
+                                       ng-model="coordinatorNameVars2[count2]">
+
+
+                                <label style="margin-left: 30px">type</label>
+                                <select class="form-control" ng-attr-id="{{coordinatorTypeIds2[count2]}}"
+                                        style="width: 175px; margin-left: 10px"
+                                        ng-model="coordinatorTypeVars2[count2]"
+                                        ng-options="c for c in coordinatorTypes">
+                                </select>
+
+
+                                <label><input class="radio" ng-attr-name="coordinatorOwnershipNames2[count2]"
+                                              style="margin-left: 30px"
+                                              type="radio" ng-attr-id="{{coordinatorOwnershipId1s2[count2]}}"
+                                              value="public">public</label>
+                                <label><input class="radio" ng-attr-name="{{coordinatorOwnershipNames2[count2]}}"
+                                              style="margin-left: 10px"
+                                              type="radio" ng-attr-id="{{coordinatorOwnershipId2s2[count2]}}"
+                                              value="private">private</label>
+                                <label><input class="radio" ng-attr-name="{{coordinatorOwnershipNames2[count2]}}"
+                                              style="margin-left: 10px"
+                                              type="radio" ng-attr-id="{{coordinatorOwnershipId3s2[count2]}}"
+                                              value="other">other</label>
+
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+<!--                    <div style="margin-top: -45px;">-->
+<!--                        <button type="button" class="btn btn-sm btn-dark" ng-click="addCoordinator2box()">+</button>-->
+<!--                    </div>-->
+
+
+                </div>
+
+            </div>
+
+            <div style="margin-left: 1110px; margin-top: 5px;">
+                <a ui-sref="getstarted16">
+                    <button type="button" class="btn btn-dark border-light" ng-click="next()">next</button>
+                </a>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<div style="position:absolute; right: 0px; top: 0">
+    <p>page15</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+<div class="full-size sub-view">
+
+    <div class="full-height sub-container">
+
+        <div class="center-content">
+            <pre class="myPre">In order to get more familiar with our system, you need to know how we model it!<br>the models are as follows:<br>
+            </pre>
+        </div>
+
+
+        <div>
+            <pre class="text-light font-weight-bold" style="margin-left: 285px;">coordinator</pre>
+        </div>
+        <div class="center-content border horizontal-center bg-dark"
+             style="height: 80px; width: 850px; margin-bottom: 50px;">
+            <!--                    coordinator-->
+            <form class="form-inline">
+                <div class="form-group">
+
+
+                    <label style="">name</label>
+                    <input class="form-control"
+                           style="margin-left: 10px; width: 100px;" type="text"
+                           ng-model="">
+
+                    <label style="margin-left: 50px">currency</label>
+                    <select class="form-control"
+                            style="margin-left: 10px; width: 100px;"
+                            ng-model=""
+                            ng-options="c.name for c in coordinators">
+                    </select>
+
+                    <label style="margin-left: 50px">type</label>
+                    <select class="form-control"
+                            style=" margin-left: 10px; width: 100px;"
+                            ng-model=""
+                            ng-options="c for c in coordinatorTypes">
+                    </select>
+
+
+                    <label><input class="radio" ng-attr-name="r"
+                                  style="margin-left: 30px"
+                                  type="radio"
+                                  value="public">public</label>
+                    <label><input class="radio" ng-attr-name="r"
+                                  style="margin-left: 10px"
+                                  type="radio"
+                                  value="private">private</label>
+                    <label><input class="radio" ng-attr-name="r"
+                                  style="margin-left: 10px"
+                                  type="radio"
+                                  value=other]">other</label>
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div>
+            <pre class="text-light font-weight-bold" style="margin-left: 285px;">provider</pre>
+        </div>
+        <div class="center-content border horizontal-center bg-dark"
+             style="height: 80px; width: 850px; margin-bottom: 50px;">
+
+
+            <form class="form-inline">
+                <div class="form-group">
+
+
+                    <label>name</label>
+                    <input class="form-control" style="margin-left: 5px; width: 100px;"
+                           type="text"
+                           ng-model="">
+
+                    <label style="margin-left: 20px">currency</label>
+                    <select class="form-control"
+                            style="margin-left: 5px; width: 100px;"
+                            ng-model=""
+                            ng-options="c.name for c in coordinators">
+                    </select>
+
+                    <label style="margin-left: 20px">coordinator</label>
+                    <select class="form-control"
+                            style="margin-left: 5px; width: 100px;"
+                            ng-model=""
+                            ng-options="c.name for c in coordinators">
+                    </select>
+
+                    <label style="margin-left: 20px">credit</label>
+                    <input class="form-control"
+                           style="margin-left: 5px; width: 100px;" type="text"
+                           ng-model="">
+
+                    <label style="margin-left: 20px">fee</label>
+                    <input class="form-control"
+                           style="margin-left: 5px; width: 50px;" type="text"
+                           ng-model="">
+
+
+                </div>
+            </form>
+        </div>
+
+
+        <div>
+            <pre class="text-light font-weight-bold" style="margin-left: 285px;">customer</pre>
+        </div>
+        <div class="center-content border horizontal-center bg-dark"
+             style="height: 80px; width: 850px; margin-bottom: 50px;">
+            <div>
+                <form class="form-inline">
+                    <div class="form-group">
+
+
+                        <label style="">name</label>
+                        <input class="form-control"
+                               style="margin-left: 5px;width: 100px;" type="text"
+                               ng-model="">
+
+
+                        <label style="margin-left: 20px">currency</label>
+                        <select class="form-control"
+                                style="margin-left: 5px; width: 100px;"
+                                ng-model=""
+                                ng-options="c.name for c in coordinators">
+                        </select>
+
+
+                        <label style="margin-left: 15px">coordinator</label>
+                        <select class="form-control" ng-attr-id=""
+                                style="width: 100px; margin-left: 5px"
+                                ng-model=""
+                                ng-options="c.name for c in coordinators">
+                        </select>
+
+                        <label style="margin-left: 15px">account balance</label>
+                        <input class="form-control" ng-attr-id=""
+                               style="width: 100px; margin-left: 5px" type="text"
+                               ng-model="">
+                        <span></span>
+
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="center-content" style="margin-top: -22px;">
+<!--            <a ui-sref="getstarted14">-->
+            <a ui-sref="getstarted18">
+                <button class="btn btn-dark border border-white text-white" ng-click="next()">next</button>
+            </a>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+<div style="position:absolute; right: 0; top: 0">
+    <p>page13</p>
+</div>

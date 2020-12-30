@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="app.css">
+
+
+</head>
+<body class="bg-dark">
+
+
+<nav class="navbar navbar-expand-sm border-bottom border-light bg-dark navbar-dark col-12"
+     style="height: 50px;top: 0; left:0px; right:0px; position:absolute; overflow: hidden">
+    <a class="navbar-brand text-white" ui-sref="#">trustfer</a>
+
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" ui-sref="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref="about">About</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref="getstarted">Get Started</a></li>
+
+            <!--            <li><a ui-sref="Get started">Get Started</a></li>-->
+        </ul>
+    </div>
+</nav>
+
+
+<div class=""
+     style="position: absolute; right:0px; left: 0; top: 50px; bottom: 0px; background-image: url('bg2.jpg'); background-size: 1530px 750px; background-repeat: no-repeat">
+        <div ui-view class="full-size"></div>
+<!--     we use ui-view instead of ng-view-->
+<!--    <div style="width: 100px; height: 100px;">this is home page</div>-->
+</div>
+
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>-->
+-->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+<script src="core/version/version.js"></script>
+<script src="core/version/version-directive.js"></script>
+<script src="core/version/interpolate-filter.js"></script>
+</body>
+</html>

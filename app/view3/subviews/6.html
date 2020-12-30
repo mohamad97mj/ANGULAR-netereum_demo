@@ -1,0 +1,170 @@
+<div class="full-size sub-view">
+
+    <div class="horizontal-center" style="height: 400px;width: 850px; padding-top: 10px;">
+
+
+        <div class="full-width">
+            <pre class="myPre text-center" style="font-size: medium; height: 100%; font-weight: bold">Change the amount of your exchange <br>to be different from Your counterpart.</pre>
+            <pre class="myPre text-center" style="font-size: small; height: 100%; margin-top: -15px;">Minus sign(-) means give and plus sign(+) means get money.</pre>
+            <div class="row" style="margin-top: 50px;">
+                <span class="col-6 text-center">YOU</span>
+                <span class="col-6 text-center">YOUR COUNTERPART</span>
+            </div>
+
+            <div class="horizontal-center row " style="height: 150px;">
+                <div class="no-gutters row col-6 center-content" style="">
+                    <div class="center-content col-6">
+                        <div style="width: 300px; height: 200px;" class="center-content">
+                            <form class="form" action="" style="">
+                                <div class="form-group">
+                                    <label for="from">From</label>
+
+                                    <select class="form-control" id="from" style="width: 175px;"
+                                            ng-init="" ng-model="exchange1.currency1"
+                                            ng-options="c for c in currencies" disabled>
+                                    </select>
+
+                                    <label style="margin-top: 20px" for="amount11">Amount</label> <input
+                                        class="form-control" id="amount11" style="width: 175px" type="text"
+                                        ng-model="exchange2.amount1" ng-change="cal3()">
+
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="full-width col-6 center-content">
+                        <div style="width: 300px; height: 200px;" class="center-content">
+                            <form class="form" action="">
+                                <div class="form-group">
+                                    <label for="to" style="">To</label>
+                                    <select class="form-control" id="to" ng-model="exchange1.currency2"
+                                            style="width: 175px;"
+                                            ng-options="c for c in currencies" disabled>
+                                    </select>
+                                    <label for="amount12" style="margin-top: 20px">Amount</label>
+                                    <input class="form-control" id="amount12" style="width: 175px" type="text"
+                                           ng-model="exchange2.amount2" disabled>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row no-gutters col-6 center-content" style="">
+                    <div class="center-content col-6">
+                        <div style="width: 300px; height: 200px;" class="center-content">
+                            <form class="form" action="" style="">
+                                <div class="form-group">
+                                    <label for="from">From</label>
+
+                                    <select class="form-control" id="from" style="width: 175px;"
+                                            ng-init="" ng-model="exchange2.currency1"
+                                            ng-options="c for c in currencies" disabled>
+                                    </select>
+
+                                    <label style="margin-top: 20px" for="amount21">Amount</label> <input
+                                        class="form-control" id="amount21" style="width: 175px" type="text"
+                                        ng-model="exchange1.amount2" disabled>
+
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="full-width col-6 center-content">
+                        <div style="width: 300px; height: 200px;" class="center-content">
+                            <form class="form" action="">
+                                <div class="form-group">
+                                    <label for="to" style="">To</label>
+                                    <select class="form-control" id="to" ng-model="exchange2.currency2"
+                                            style="width: 175px;"
+                                            ng-options="c for c in currencies" disabled>
+                                    </select>
+                                    <label for="amount22" style="margin-top: 20px">Amount</label>
+                                    <input class="form-control" id="amount22" style="width: 175px" type="text"
+                                           ng-model="exchange1.amount1" disabled>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="table-responsive horizontal-center" style="width: 450px; height: 220px; margin-top: 50px;">
+            <table class="table" style="">
+                <tr>
+                    <th></th>
+                    <th>{{exchange1.currency1}}</th>
+                    <th>{{exchange1.currency2}}</th>
+                </tr>
+                <tr>
+                    <td>you</td>
+                    <td><span class="text-danger font-weight-bold">-{{exchange2.amount1}}</span></td>
+                    <td>
+                        <span id="sp1" class="font-weight-bold text-warning"
+                              style="display: none;">+{{exchange2.amount2}}</span>
+                        <span id="sp11" class="font-weight-bold text-success"
+                              style="display: none;">+{{exchange2.amount2}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>your counterpart</td>
+                    <td>
+                        <span>
+                            <span id="sp2" class="font-weight-bold text-warning"
+                                  style="display: none;">+{{exchange1.amount1}}</span>
+                            <span id="sp21" class="font-weight-bold text-success"
+                                  style="display: none;">+{{exchange1.amount1}}</span>
+                        </span>
+                    </td>
+                    <td><span class="text-danger font-weight-bold">-{{exchange1.amount2}}</span></td>
+                </tr>
+                <tr id="sumRow">
+                    <td>sum</td>
+                    <td><span id="sp3" class="font-weight-bold" style="visibility: hidden"><span
+                            ng-if="(exchange1.amount1 - exchange2.amount1)>0">+</span>{{exchange1.amount1 - exchange2.amount1}}</span>
+                    </td>
+                    <td><span id="sp4" class="font-weight-bold" style="visibility: hidden"><span
+                            ng-if="(exchange2.amount2 - exchange1.amount2)>0">+</span>{{exchange2.amount2 - exchange1.amount2}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="horizontal-center" style="width:450px; height: 50px; margin-top: -25px;">
+            <span id="status" class="text-success"></span>
+            <span id="status2" class="text-danger"></span>
+
+        </div>
+
+        <div class="center-content" style="margin-top: 10px;">
+            <div>
+
+                <button class="btn btn-danger border border-light text-white btn" ng-click="doExchange2()">exchange
+                </button>
+                <a ui-sref="getstarted7">
+                    <button class="btn btn-dark text-white border-light" ng-click="">next</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div style="position:absolute; right: 0px; top: 0">
+    <p>page6</p>
+</div>

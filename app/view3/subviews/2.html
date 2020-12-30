@@ -1,0 +1,56 @@
+<div class="full-size sub-view">
+
+    <div class="horizontal-center sub-container" style="900px;">
+        <div class="" style="height: 50px;">
+            <pre class="myPre text-center">Let's start with a hypothetical exchange.</pre>
+
+        </div>
+        <div class=" full-width center-content" style="height: 300px;">
+            <div class="row">
+                <div class="full-width col-6">
+                    <form class="form" action="">
+                        <div class="form-group">
+                            <label for="from">From</label>
+
+                            <select class="form-control" id="from" style="width: 175px;" ng-model="exchange.currency1"
+                                    ng-options="c for c in currencies">
+                            </select>
+
+                            <label style="margin-top: 20px" for="amount1">Amount</label> <input ng-change="cal1()" class="form-control" id="amount1" style="width: 175px" type="text"
+                                                                       ng-model="exchange.amount1">
+
+
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="full-width col-6">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="to" style="">To</label>
+                            <select class="form-control" id="to" ng-model="exchange.currency2" style="width: 175px;"
+                                    ng-options="c for c in currencies">
+                            </select>
+                            <label for="amount2" style="margin-top: 20px">Amount</label>
+                            <input class="form-control" id="amount2" style="width: 175px" type="text" ng-model="exchange.amount2" disabled>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-content" style="margin-top: 50px;">
+        <a ui-sref="getstarted3">
+            <button class="btn btn-dark text-white border-light" ng-click="">next</button>
+        </a>
+    </div>
+
+</div>
+
+
+
+<div style="position:absolute; right: 0px; top: 0">
+    <p>page2</p>
+</div>

@@ -1,0 +1,512 @@
+<div class="full-size sub-view">
+    <div class="horizontal-center">
+        <div class="full-width row no-gutters">
+            <div class="col-4" style=" padding: 10px;">
+                <pre class="text-light text-center" style="font-size:large; margin-top: 25px;">Providers Accounts</pre>
+
+                <div class="horizontal-center full-width"
+                     style="border-style: solid; margin-bottom: 15px; padding-left: 15px;border-width: thick; padding-right: 15px; padding-bottom: 15px;"
+                     ng-repeat="e in agreements" ng-init="scopeProvidersCount = providersCount">
+                    <!--                >-->
+
+                    <pre class="text-light font-weight-bold" style="margin-bottom: 0px;">importer</pre>
+                    <div class="border horizontal-center bg-dark"
+                         style="margin-bottom: 10px; padding: 5px;">
+                        <!--                    provider account-->
+                        <div class="full-width">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <div>
+                                        <label style="">name</label>
+                                        <input class="form-control "
+                                               ng-attr-id="{{importerNameIds[scopeProvidersCount]}}"
+                                               style="margin-left: 5px;width: 125px;height: 30px;" type="text"
+                                               ng-model="importerNameVars[scopeProvidersCount]">
+
+                                    </div>
+
+                                    <div>
+                                        <label style="">coordinator</label>
+                                        <select class="form-control"
+                                                ng-attr-id="{{importerCoordinatorIds[scopeProvidersCount]}}"
+                                                style="width: 125px;height: 30px;; margin-left: 5px"
+                                                ng-change="setImporterCurrency(scopeProvidersCount)"
+                                                ng-model="importerCoordinatorVars[scopeProvidersCount]"
+                                                ng-options="c.name for c in coordinators">
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label style="">currency</label>
+                                        <select class="form-control"
+                                                ng-attr-id="{{importerCurrencyIds[scopeProvidersCount]}}"
+                                                style="width: 100px;height: 30px;; margin-left: 5px"
+                                                ng-model="importerCurrencyVars[scopeProvidersCount]"
+                                                ng-options="c for c in currencies" disabled>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label style="">fee(%)</label>
+                                        <input class="form-control "
+                                               ng-attr-id="{{importerFeeIds[scopeProvidersCount]}}"
+                                               style="margin-left: 5px;width: 50px;height: 30px;" type="text"
+                                               ng-model="importerFeeVars[scopeProvidersCount]">
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <form class="form-inline">
+                                <div class="form-group">
+
+                                    <div>
+                                        <label style="">credit before</label>
+                                        <input class="form-control "
+                                               ng-attr-id="{{importerCreditBeforeIds[scopeProvidersCount]}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="importerCreditBeforeVars[scopeProvidersCount]">
+                                    </div>
+
+                                    <div>
+                                        <label style="">due to</label>
+                                        <input class="form-control "
+                                               ng-attr-id="{{importerDueToIds[scopeProvidersCount]}}"
+                                               style="margin-left: 5px;width: 205px;height: 30px;" type="text"
+                                               ng-model="importerDueToVars[scopeProvidersCount]">
+                                    </div>
+
+
+                                    <div>
+                                        <label style="">credit after</label>
+                                        <input class="form-control "
+                                               ng-attr-id="{{importerCreditBeforeIds[scopeProvidersCount]}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="importerCreditBeforeVars[scopeProvidersCount]">
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <pre class="text-light font-weight-bold" style="margin-bottom: -0px">exporter</pre>
+                    <div class="border horizontal-center bg-dark"
+                         style="margin-bottom: 0px; padding: 5px;">
+                        <div class="full-width">
+                            <div class="full-width">
+                                <form class="form-inline">
+                                    <div class="form-group">
+
+                                        <div>
+                                            <label style="">name</label>
+                                            <input class="form-control"
+                                                   ng-attr-id="{{exporterNameIds[scopeProvidersCount]}}"
+                                                   style="margin-left: 5px;width: 125px;height: 30px;" type="text"
+                                                   ng-model="exporterNameVars[scopeProvidersCount]">
+                                        </div>
+
+
+                                        <div>
+                                            <label style="">coordinator</label>
+                                            <select class="form-control"
+                                                    ng-attr-id="{{exporterCoordinatorIds[scopeProvidersCount]}}"
+                                                    style="width: 125px;height: 30px;; margin-left: 5px"
+                                                    ng-change="setExporterCurrency(scopeProvidersCount)"
+                                                    ng-model="exporterCoordinatorVars[scopeProvidersCount]"
+                                                    ng-options="c.name for c in coordinators">
+                                            </select>
+
+                                        </div>
+
+                                        <div>
+                                            <label style="">currency</label>
+                                            <select class="form-control"
+                                                    ng-attr-id="{{exporterCurrencyIds[scopeProvidersCount]}}"
+                                                    style="width: 100px;height: 30px;; margin-left: 5px"
+                                                    ng-model="exporterCurrencyVars[scopeProvidersCount]"
+                                                    ng-options="c for c in currencies" disabled>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label style="">fee(%)</label>
+                                            <input class="form-control"
+                                                   ng-attr-id="{{exporterFeeIds[scopeProvidersCount]}}"
+                                                   style="margin-left: 5px;width: 50px;height: 30px;" type="text"
+                                                   ng-model="exporterFeeVars[scopeProvidersCount]">
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="full-width">
+
+                                <form class="form-inline">
+
+                                    <div class="form-group">
+
+                                        <div>
+                                            <label style="">credit before</label>
+                                            <input class="form-control"
+                                                   ng-attr-id="{{exporterCreditBeforeIds[scopeProvidersCount]}}"
+                                                   style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                                   ng-model="exporterCreditBeforeVars[scopeProvidersCount]">
+
+                                        </div>
+
+                                        <div>
+                                            <label style="">due to</label>
+                                            <input class="form-control "
+                                                   ng-attr-id="{{exporterDueToIds[scopeProvidersCount]}}"
+                                                   style="margin-left: 5px;width: 205px;height: 30px;" type="text"
+                                                   ng-model="exporterDueToVars[scopeProvidersCount]">
+                                        </div>
+
+
+                                        <div>
+                                            <label style="">credit after</label>
+                                            <input class="form-control"
+                                                   ng-attr-id="{{exporterCreditBeforeIds[scopeProvidersCount]}}"
+                                                   style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                                   ng-model="exporterCreditBeforeVars[scopeProvidersCount]">
+
+                                        </div>
+
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="margin-top: 5px; margin-left: 0px" class="">
+                    <button type="button" class="btn btn-dark btn-sm border border-light"
+                            ng-click="addProviderBox()">+
+                    </button>
+                    <button type="button" class="btn btn-success btn-sm border border-light"
+                            ng-click="refreshProviders()">done
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-3 text-dark" style="padding : 15px;">
+
+                <div class=" center-content border-bottom horizontal-center full-width"
+                     style="margin-bottom: 5px; padding: 10px;">
+
+                    <form class="form-inline">
+                        <div class="full-width center-content">
+
+                            <form class="form-inline">
+                                <div class="form-group">
+
+
+                                    <div>
+                                        <label style="" class="text-light">available<br>
+                                            credit({{currencies[0]}})
+                                        </label>
+                                        <input class="form-control"
+                                               ng-attr-id=""
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="availableCredit1" disabled>
+
+                                    </div>
+
+
+                                    <div>
+                                        <label style="" class="text-light">available<br>
+                                            credit({{currencies[1]}})</label>
+
+                                        <input class="form-control"
+                                               ng-attr-id=""
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="availableCredit2" disabled>
+
+
+                                    </div>
+
+                                    <div>
+
+                                        <label style="" class="text-light">required<br>
+                                            credit({{baseCurrency}})
+
+                                        </label>
+
+                                        <input class="form-control"
+                                               ng-attr-id=""
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="requiredCredit" disabled>
+
+
+                                    </div>
+
+                                </div>
+
+
+                            </form>
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <pre class="text-light text-center">Exchanges</pre>
+                <div ng-repeat="e in exchanges" ng-init="scopeExchangesCount = exchangesCount">
+
+
+                    <div>
+                        <div style="font-size:large; margin-top: 15px;">
+                            <input class="form-control bg-dark border-bottom-0 text-light"
+                                   ng-attr-id="{{exchangeIdIds[scopeExchangesCount]}}"
+                                   style="margin-left: 0px;width: 50px;height: 30px;" type="text"
+                                   ng-model="exchangeIdVars[scopeExchangesCount]" disabled>
+
+                        </div>
+                        <div class=" bg-dark horizontal-center border"
+                             style="margin-bottom: 10px; padding: 5px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+
+
+                                    <div>
+
+                                        <label style="" class="text-light">from</label>
+                                        <select class="form-control"
+                                                ng-attr-id="{{exchangeFromIds[scopeExchangesCount]}}"
+                                                style="width: 125px;height: 30px; margin-left: 5px;"
+                                                ng-model="exchangeFromVars[scopeExchangesCount]"
+                                                ng-options="c.name for c in customers">
+                                        </select>
+                                    </div>
+
+
+                                    <div>
+
+                                        <label style="" class="text-light">to</label>
+                                        <select class="form-control" ng-attr-id="{{exchangeToIds[scopeExchangesCount]}}"
+                                                style="width: 125px;height: 30px;; margin-left: 5px"
+                                                ng-model="exchangeToVars[scopeExchangesCount]"
+                                                ng-options="c.name for c in customers">
+                                        </select>
+
+                                    </div>
+
+                                    <div>
+                                        <label style="" class="text-light">max fee</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{exchangeMaxFeeIds[scopeExchangesCount]}}"
+                                               style="margin-left: 5px;width: 50px;height: 30px;" type="text"
+                                               ng-model="exchangeMaxFeeVars[scopeExchangesCount]" disabled>
+
+                                    </div>
+
+
+                                </div>
+
+                            </form>
+
+                            <form class="form-inline bg-dark">
+                                <div class="form-group">
+
+                                    <div>
+                                        <label style="" class="text-light">amount<span>({{exchangeFromVars[scopeExchangesCount].currency}})</span>
+                                        </label>
+                                        <input class="form-control"
+                                               ng-change="setExchangeAmount2AndFee(scopeExchangesCount)"
+                                               ng-attr-id="{{exchangeAmount1Ids[scopeExchangesCount]}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="exchangeAmount1Vars[scopeExchangesCount]">
+
+                                    </div>
+
+                                    <div>
+
+                                        <label style="" class="text-light">fee amount</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{exchangeAmount2Ids[scopeExchangesCount]}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="exchangeAmount2Vars[scopeExchangesCount]" disabled>
+
+                                    </div>
+
+                                    <div>
+
+                                        <label style="" class="text-light">amount<span>({{exchangeToVars[scopeExchangesCount].currency}})</span>
+                                        </label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{exchangeAmount2Ids[scopeExchangesCount]}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="exchangeAmount2Vars[scopeExchangesCount]" disabled>
+
+                                    </div>
+
+
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 0px;margin-left: 0px;" class="">
+                    <button type="button" class="btn btn-dark btn-sm border border-light"
+                            ng-click="addExchangeBox()">
+                        +
+                    </button>
+
+                    <button type="button" class="btn btn-success btn-sm border border-light"
+                            ng-click="refreshExchanges()">done
+                    </button>
+
+
+                    <button type="button" class="btn btn-danger btn-sm border border-light"
+                            ng-click="exchange()">exchange
+                    </button>
+                </div>
+
+                <div style="margin-top: 50px;" class="full-width">
+
+                    <a ui-sref="getstarted17">
+
+                        <button type="text" ng-click="next()" class="btn btn-dark border border-light"
+                                style="margin-left: 200px;">next
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <div class="col-5">
+                <pre class="text-light text-center" style="font-size:large; margin-top: 25px;">customers Accounts</pre>
+                <div class="full-width" style="padding: 10px;">
+                    <div class="border border-light bg-dark horizontal-center"
+                         style="margin-bottom: 10px;" ng-repeat="c in customers"
+                         ng-init="scopeCustomersCount = customersCount">
+
+                        <!--                        customer account-->
+
+                        <!--                        <p>here {{c.logs1[0]}} </p>-->
+                        <!--                        <p>here2 {{c.logs1[1]}} </p>-->
+
+
+                        <div class="full-width center-content">
+                            <form class="form-inline">
+                                <div class="form-group">
+
+                                    <div>
+                                        <label style="">name</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{customerNameIds[scopeCustomersCount]}}"
+                                               style="margin-left: 5px; width: 125px;height: 30px;" type="text"
+                                               ng-model="customerNameVars[scopeCustomersCount]">
+                                    </div>
+
+
+                                    <div>
+                                        <label style="">coordinator</label>
+                                        <select class="form-control"
+                                                ng-change="setCustomerCurrency(scopeCustomersCount)"
+                                                ng-attr-id="{{customerCoordinatorIds[scopeCustomersCount]}}"
+                                                style="width: 125px;height: 30px;; margin-left: 5px"
+                                                ng-model="customerCoordinatorVars[scopeCustomersCount]"
+                                                ng-options="c.name for c in coordinators">
+                                        </select>
+
+                                    </div>
+
+                                    <div>
+                                        <label style="">currency</label>
+                                        <select class="form-control"
+                                                ng-attr-id="{{customerCurrencyIds[scopeCustomersCount]}}"
+                                                style="width: 100px;height: 30px;; margin-left: 5px"
+                                                ng-model="customerCurrencyVars[scopeCustomersCount]"
+                                                ng-options="c for c in currencies" disabled>
+                                        </select>
+
+                                    </div>
+
+                                    <div>
+                                        <label style="">balance before</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{customerAccountBalanceBeforeIds[scopeCustomersCount]}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="customerAccountBalanceBeforeVars[scopeCustomersCount]">
+                                    </div>
+
+                                    <div>
+                                        <label style="">balance after</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{customerAccountBalanceAfterIds[scopeCustomersCount]}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="customerAccountBalanceAfterVars[scopeCustomersCount]">
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="center-content full-width"
+                             style="padding: 10px;">
+
+                            <div class="center-content full-width">
+
+                                <div class="full-width" style="padding-top: 10px;">
+                                    <table class="full-width" style="font-size: small;"
+                                           ng-init="length = customersLogs[scopeCustomersCount].length">
+                                        <tr class="bg-light">
+                                            <th></th>
+                                            <th colspan="{{length}}" class="text-dark">logs</th>
+                                            <th class="text-dark">final</th>
+
+                                        </tr>
+                                        <tr class="">
+                                            <th>ex ID</th>
+                                            <td ng-repeat="l in customersLogs[scopeCustomersCount]">{{l.ID1}}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>amount</th>
+                                            <td ng-repeat="l in customersLogs[scopeCustomersCount]">
+                                                <spn ng-if="l.amount > 0">+</spn>
+                                                {{l.amount}}
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: -5px;margin-left: 0px;">
+                        <button type="button" class="btn btn-dark btn-sm border border-light"
+                                ng-click="addCustomerBox()">+
+                        </button>
+                        <button type="button" class="btn btn-success btn-sm border border-light"
+                                ng-click="refreshCustomers()">done
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="position:absolute; right: 0px; top: 0">
+    <p>page16</p>
+</div>
+

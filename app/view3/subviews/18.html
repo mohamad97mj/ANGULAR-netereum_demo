@@ -1,0 +1,53 @@
+<div class="full-size sub-view">
+
+    <div class="horizontal-center">
+        <div>
+            <pre class="myPre text-center">Create an exchange channel to exchange in!<br></pre>
+        </div>
+
+        <div class="full-width center-content">
+            <form class="form" action="">
+                <div class="form-group">
+
+                    <div ng-repeat="c in indexCurrencies">
+
+                        <label style="margin-right: 10px" for="from">Currency {{c.index}} </label>
+
+                        <select class="form-control" id="from" style="width: 175px;" ng-model="c.currency"
+                                ng-options="c1 for c1 in currencies1">
+                        </select>
+
+                    </div>
+
+                    <div style="margin-top: 0px;margin-left: 0px;" class="">
+                        <button type="button" class="btn btn-dark btn-sm border border-light"
+                                ng-click="addCurrencyBox()">
+                            +
+                        </button>
+                    </div>
+
+
+                </div>
+
+            </form>
+        </div>
+
+
+        <div class="center-content full-width " style="margin-top: 20px;">
+            <a ui-sref="getstarted19">
+                <button class="btn btn-dark text-white border-light" type="button" style="width: 100px;"
+                        ng-click="createChannel()">
+                    create
+                </button>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div style="position:absolute; right: 0px; top: 0">
+    <p>page18</p>
+</div>
+

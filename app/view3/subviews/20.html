@@ -1,0 +1,561 @@
+<div class="full-size sub-view">
+    <div class="horizontal-center">
+        <div class="full-width row no-gutters">
+            <div class="col-4" style=" padding: 10px;">
+                <pre class="text-light text-center" style="font-size:large; margin-top: 25px;">Providers Accounts</pre>
+
+                <div ng-repeat="a in channel.getAgreements()" style="margin-bottom: 15px"><!--                >-->
+                    <div class="horizontal-center full-width"
+                         style="border-style: solid; padding-left: 15px;border-width: thick; padding-right: 15px; padding-bottom: 15px;"
+                    >
+
+                        <pre class="text-light font-weight-bold" style="margin-bottom: 0px;">det</pre>
+                        <div class="border horizontal-center bg-dark"
+                             style="margin-bottom: 10px; padding: 5px;">
+                            <!--                    provider account-->
+                            <div class="full-width">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <div>
+                                            <label style="">name</label>
+                                            <input class="form-control "
+                                                   ng-attr-id="{{a.importer.boxNameId}}"
+                                                   style="margin-left: 5px;width: 125px;height: 30px;" type="text"
+                                                   ng-model="a.importer.name">
+
+                                        </div>
+
+                                        <div>
+                                            <label style="">coordinator</label>
+                                            <select class="form-control"
+                                                    ng-attr-id="{{a.importer.boxCoordinatorId}}"
+                                                    style="width: 125px;height: 30px;; margin-left: 5px"
+                                                    ng-change="setImporterCurrency(a.importer)"
+                                                    ng-model="a.importer.coordinator"
+                                                    ng-options="c.name for c in allCoordinators">
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label style="">currency</label>
+                                            <select class="form-control"
+                                                    ng-attr-id="{{a.importer.boxCurrencyId}}"
+                                                    style="width: 100px;height: 30px;; margin-left: 5px"
+                                                    ng-model="a.importer.currency"
+                                                    ng-options="c for c in currencies" disabled>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label style="">fee(%)</label>
+                                            <input class="form-control "
+                                                   ng-attr-id="{{a.importer.boxFeeId}}"
+                                                   style="margin-left: 5px;width: 50px;height: 30px;" type="text"
+                                                   ng-model="a.importer.fee">
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                <form class="form-inline">
+                                    <div class="form-group">
+
+                                        <div>
+                                            <label style="">original amount</label>
+                                            <input class="form-control "
+                                                   ng-attr-id="{{a.importer.boxCreditBeforeId}}"
+                                                   ng-change="setExporterCreditBefore(a)"
+                                                   style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                                   ng-model="a.importer.creditBefore">
+                                        </div>
+
+                                        <div>
+                                            <label style="">due diligence</label>
+                                            <input class="form-control "
+                                                   ng-attr-id="{{a.importer.boxDueToId}}"
+                                                   style="margin-left: 5px;width: 205px;height: 30px;" type="text"
+                                                   ng-model="a.importer.dueTo">
+                                        </div>
+
+
+                                        <div>
+                                            <label style="">balance</label>
+                                            <input class="form-control "
+                                                   ng-attr-id="{{a.importer.boxCreditAfterId}}"
+                                                   style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                                   ng-model="a.importer.creditAfter" disabled>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <pre class="text-light font-weight-bold" style="margin-bottom: -0px">claim</pre>
+                        <div class="border horizontal-center bg-dark"
+                             style="margin-bottom: 0px; padding: 5px;">
+                            <div class="full-width">
+                                <div class="full-width center-content">
+                                    <form class="form-inline">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <label style="">name</label>
+                                                <input class="form-control"
+                                                       ng-attr-id="{{a.exporter.boxNameId}}"
+                                                       style="margin-left: 5px;width: 125px;height: 30px;" type="text"
+                                                       ng-model="a.exporter.name">
+                                            </div>
+
+
+                                            <div>
+                                                <label style="">coordinator</label>
+                                                <select class="form-control"
+                                                        ng-attr-id="{{a.exporter.boxCoordinatorId}}"
+                                                        style="width: 125px;height: 30px;; margin-left: 5px"
+                                                        ng-change="setExporterCurrency(a.exporter)"
+                                                        ng-model="a.exporter.coordinator"
+                                                        ng-options="c.name for c in allCoordinators">
+                                                </select>
+
+                                            </div>
+
+                                            <div>
+                                                <label style="">currency</label>
+                                                <select class="form-control"
+                                                        ng-attr-id="{{a.exporter.boxCurrencyId}}"
+                                                        style="width: 100px;height: 30px;; margin-left: 5px"
+                                                        ng-model="a.exporter.currency"
+                                                        ng-options="c for c in currencies" disabled>
+                                                </select>
+                                            </div>
+
+<!--                                            <div>-->
+<!--                                                <label style="">fee(%)</label>-->
+<!--                                                <input class="form-control"-->
+<!--                                                       ng-attr-id="{{a.exporter.boxFeeId}}"-->
+<!--                                                       style="margin-left: 5px;width: 50px;height: 30px;" type="text"-->
+<!--                                                       ng-model="a.exporter.fee">-->
+
+<!--                                            </div>-->
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="full-width center-content">
+
+                                    <form class="form-inline">
+
+                                        <div class="form-group">
+
+                                            <div>
+                                                <label style="">original amount</label>
+                                                <input class="form-control"
+                                                       ng-attr-id="{{a.exporter.boxCreditBeforeId}}"
+                                                       ng-change=""
+                                                       style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                                       ng-model="a.exporter.creditBefore">
+
+                                            </div>
+
+<!--                                            <div>-->
+<!--                                                <label style="">due diligence</label>-->
+<!--                                                <input class="form-control "-->
+<!--                                                       ng-attr-id="{{a.exporter.boxDueToId}}"-->
+<!--                                                       style="margin-left: 5px;width: 205px;height: 30px;" type="text"-->
+<!--                                                       ng-model="a.exporter.dueTo">-->
+<!--                                            </div>-->
+
+
+                                            <div>
+                                                <label style="">balance</label>
+                                                <input class="form-control"
+                                                       ng-attr-id="{{a.exporter.boxCreditAfterId}}"
+                                                       style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                                       ng-model="a.exporter.creditAfter" disabled>
+
+                                            </div>
+
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" style="margin-top: 5px; margin-left: 467px;"
+                                class="btn btn-dark btn-sm border border-light"
+                                ng-attr-id="{{a.boxRemoveBtnId}}"
+                                ng-click="removeProvider(a)">-
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div style="margin-top: -45px; margin-left: 437px" class="">
+                    <button type="button" class="btn btn-dark btn-sm border border-light" ng-attr-id="addAgreementBtn"
+                            ng-click="addProviderBox()">+
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-3 text-dark" style="padding : 15px;">
+
+                <!--                <div class=" center-content border-bottom horizontal-center full-width"-->
+                <!--                     style="margin-bottom: 5px; padding: 10px;">-->
+
+                <!--                    <form class="form-inline">-->
+                <!--                        <div class="full-width center-content">-->
+
+                <!--                            <form class="form-inline">-->
+                <!--                                <div class="form-group">-->
+
+
+                <!--                                    <div>-->
+                <!--                                        <label style="" class="text-light">available<br>-->
+                <!--                                            credit({{currencies[0]}})-->
+                <!--                                        </label>-->
+                <!--                                        <input class="form-control"-->
+                <!--                                               ng-attr-id=""-->
+                <!--                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"-->
+                <!--                                               ng-model="availableCredit1" disabled>-->
+
+                <!--                                    </div>-->
+
+
+                <!--                                    <div>-->
+                <!--                                        <label style="" class="text-light">available<br>-->
+                <!--                                            credit({{currencies[1]}})</label>-->
+
+                <!--                                        <input class="form-control"-->
+                <!--                                               ng-attr-id=""-->
+                <!--                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"-->
+                <!--                                               ng-model="availableCredit2" disabled>-->
+
+
+                <!--                                    </div>-->
+
+                <!--                                    <div>-->
+
+                <!--                                        <label style="" class="text-light">required<br>-->
+                <!--                                            credit({{baseCurrency}})-->
+
+                <!--                                        </label>-->
+
+                <!--                                        <input class="form-control"-->
+                <!--                                               ng-attr-id=""-->
+                <!--                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"-->
+                <!--                                               ng-model="requiredCredit" disabled>-->
+
+
+                <!--                                    </div>-->
+
+                <!--                                </div>-->
+
+
+                <!--                            </form>-->
+                <!--                        </div>-->
+
+                <!--                    </form>-->
+
+                <!--                </div>-->
+
+
+                <pre class="text-light font-weight-bold text-center" style="font-size:large; margin-top: 10px;">Exchanges</pre>
+                <div ng-repeat="e in channel.getExchanges()">
+
+                    <div>
+                        <div style="font-size:large; margin-top: 15px;">
+                            <input class="form-control bg-dark border-bottom-0 text-light"
+                                   ng-attr-id="{{e.boxIdId}}"
+                                   style="margin-left: 0px;width: 50px;height: 30px;" type="text"
+                                   ng-model="e.ID1" disabled>
+
+                        </div>
+                        <div class=" bg-dark horizontal-center border"
+                             style="margin-bottom: 0px; padding: 5px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+
+
+                                    <div>
+
+                                        <label style="" class="text-light">from</label>
+                                        <select class="form-control"
+                                                ng-attr-id="{{e.boxFromId}}"
+                                                style="width: 125px;height: 30px; margin-left: 5px;"
+                                                ng-model="e.from"
+                                                ng-options="c.name for c in channel.getCustomers()">
+                                        </select>
+                                    </div>
+
+
+                                    <div>
+
+                                        <label style="" class="text-light">to</label>
+                                        <select class="form-control" ng-attr-id="{{e.boxToId}}"
+                                                style="width: 125px;height: 30px;; margin-left: 5px"
+                                                ng-model="e.to1"
+                                                ng-options="c.name for c in channel.getCustomers()">
+                                        </select>
+
+                                    </div>
+
+                                    <div>
+                                        <label style="" class="text-light">max fee</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{e.boxMaxFeeId}}"
+                                               style="margin-left: 5px;width: 50px;height: 30px;" type="text"
+                                               ng-model="e.maxFee" disabled>
+
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form-inline bg-dark">
+                                <div class="form-group">
+
+                                    <div>
+                                        <label style="" class="text-light">amount<span>({{e.from.currency}})</span>
+                                        </label>
+                                        <input class="form-control"
+                                               ng-change="setExchangeAmount2AndFee(e)"
+                                               ng-attr-id="{{e.boxAmount1Id}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="e.amount1">
+
+                                    </div>
+
+                                    <div>
+
+                                        <label style="" class="text-light">fee amount</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{e.boxFeeAmountId}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="e.feeAmount"
+                                               disabled>
+
+                                    </div>
+
+                                    <div>
+
+                                        <label style="" class="text-light">amount<span>({{e.to1.currency}})</span>
+                                        </label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{e.boxAmount2Id}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="e.amount2" disabled>
+
+                                    </div>
+
+
+                                </div>
+
+                            </form>
+
+                            <form>
+                                <div class="form-group text-light" style="margin-top: 10px;">
+
+                                    <p>Path:</p>
+
+                                    <pre ng-attr-id="{{e.boxPathId}}" class="text-light"
+                                         style="margin-top: -5px;">{{e.path}}</pre>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div style="font-size:large; margin-top: 5px; margin-left: 250px;">
+                            <!--                            <button class="btn btn-dark btn-sm border border-light  text-light"-->
+                            <!--                                    ng-attr-id=""-->
+                            <!--                                    style="margin-left: 0px;" type="text"-->
+                            <!--                                    ng-click="removeExchange(scopeExchangesCount)">- -->
+                            <!--                            </button>-->
+
+                            <button type="button" class="btn btn-dark btn-sm border border-light" style="height: 29px;"
+                                    ng-click="removeExchange(e)"
+                                    ng-attr-id="{{e.boxRemoveBtnId}}">-
+                            </button>
+
+                            <button class="btn btn-success btn-sm border-light border-right text-light"
+                                    ng-attr-id="{{e.boxSubmitBtnId}}"
+                                    style="margin-left: 0px;" type="text"
+                                    ng-click="submitExchange(e)">submit
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="margin-top: -30px;margin-left: 220px;" class="">
+                    <button type="button" class="btn btn-dark btn-sm border border-light" style="height: 29px;"
+                            ng-attr-id="addExchangeBtn"
+                            ng-click="addExchangeBox()">
+                        +
+                    </button>
+
+
+                </div>
+
+                <div style="margin-top: 50px; margin-left: 55px;" class="full-width">
+
+                    <button type="button" class="btn btn-info border border-light"
+                            ng-click="resetPage()">reset
+                    </button>
+
+                    <button type="button" class="btn btn-danger border border-light"
+                            ng-click="exchange()">exchange
+                    </button>
+
+                    <button type="button" class="btn btn-warning border border-light"
+                            ng-click="undo()">undo
+                    </button>
+
+                    <a ui-sref="getstarted21">
+                        <button type="text" ng-click="next()" class="btn btn-dark border border-light"
+                                style="margin-left: 0px;">next
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <div class="col-5">
+                <pre class="text-light text-center" style="font-size:large; margin-top: 25px;">customers Accounts</pre>
+
+                <div style="padding: 10px;" ng-repeat="c in channel.getCustomers()">
+
+                    <div class="bg-dark horizontal-center"
+                         style="margin-bottom: 10px;border-style: solid; border-width: thick;">
+
+                        <div class="full-width center-content">
+                            <form class="form-inline">
+                                <div class="form-group">
+
+                                    <div>
+                                        <label style="">name</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{c.boxNameId}}"
+                                               style="margin-left: 5px; width: 125px;height: 30px;" type="text"
+                                               ng-model="c.name">
+                                    </div>
+
+
+                                    <div>
+                                        <label style="">coordinator</label>
+                                        <select class="form-control"
+                                                ng-change="setCustomerCurrency(c)"
+                                                ng-attr-id="{{c.boxCoordinatorId}}"
+                                                style="width: 125px;height: 30px;; margin-left: 5px"
+                                                ng-model="c.coordinator"
+                                                ng-options="c.name for c in allCoordinators">
+                                        </select>
+
+                                    </div>
+
+                                    <div>
+                                        <label style="">currency</label>
+                                        <select class="form-control"
+                                                ng-attr-id="{{c.boxCurrencyID}}"
+                                                style="width: 100px;height: 30px;; margin-left: 5px"
+                                                ng-model="c.currency"
+                                                ng-options="c for c in currencies" disabled>
+                                        </select>
+
+                                    </div>
+
+                                    <div>
+                                        <label style="">balance before</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{c.boxBalanceBeforeId}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-change="setTempBalanceAfter(c)"
+                                               ng-model="c.balanceBefore">
+                                    </div>
+
+                                    <div>
+                                        <label style="">balance after</label>
+                                        <input class="form-control"
+                                               ng-attr-id="{{c.boxBalanceAfterId}}"
+                                               style="margin-left: 5px;width: 100px;height: 30px;" type="text"
+                                               ng-model="c.balanceAfter" disabled>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="center-content full-width"
+                             style="padding: 10px;">
+
+                            <div class="center-content full-width">
+
+                                <div class="full-width" style="padding-top: 10px;">
+                                    <div class="text-center full-width bg-light text-dark">logs</div>
+                                    <table class="full-width" style="font-size: small;"
+                                           ng-init="c.logs1.length">
+                                        <!--                                        <tr class="bg-light border">-->
+                                        <!--                                            <th></th>-->
+                                        <!--                                            <th colspan="{{customersLogs[scopeCustomersCount].length}}" class="text-dark text-center">logs</th>-->
+                                        <!--                                            &lt;!&ndash;                                            <th class="text-dark">final</th>&ndash;&gt;-->
+
+                                        <!--                                        </tr>-->
+                                        <tr class="border border-bottom">
+                                            <th class="border border-right" style="width: 150px;">ex ID</th>
+                                            <td ng-repeat="l in c.logs1">
+                                                {{l.ID1}}
+                                            </td>
+                                        </tr>
+                                        <tr class="border border-bottom">
+                                            <th class="border border-right" style="width: 150px;">amount</th>
+                                            <td ng-repeat="l in c.logs1">
+                                                <spn ng-if="l.amount > 0">+</spn>
+                                                {{l.amount}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div style="margin-top: -5px; margin-left: 600px;">
+
+                        <button type="button" class="btn btn-dark btn-sm border border-light"
+                                ng-click="removeCustomer(c)"
+                                ng-attr-id="{{c.boxRemoveBtnId}}">-
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div style="margin-top: -40px;margin-left: 578px;">
+                    <button type="button" class="btn btn-dark btn-sm border border-light" ng-attr-id="addCustomerBtn"
+                            ng-click="addCustomerBox()">+
+                    </button>
+                    <!--                        <button type="button" class="btn btn-success btn-sm border border-light"-->
+                    <!--                                ng-click="refreshCustomers()">done-->
+                    <!--                        </button>-->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="position:absolute; right: 0px; top: 0">
+    <p>page20</p>
+</div>
